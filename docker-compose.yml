@@ -3,6 +3,6 @@ services:
   home:
     ports:
       - "3005:3005"
-    command: npm dev
-    build: ./build
+    command: yarn dev
+    build: ./
     restart: always

@@ -1,12 +1,14 @@
 FROM node:alpine as builder
 ADD . /var/app
 WORKDIR /var/app
-ENV PATH="/var/app/node_modules/.bin/:${PATH}"
+RUN npm i -g yarn
 ENV TZ Asia/Shanghai
-RUN npm install
-RUN npm run build
+# COPY package.json /usr/src/app/
+RUN yarn
+RUN yarn build
 # CMD serve -s build
-CMD npm start
+CMD yarn dev
 # COPY /build /usr/share/nginx/html
 # ADD nginx.conf /etc/nginx/conf.d/default.conf
+# COPY . /usr/src/app
 EXPOSE 3005
