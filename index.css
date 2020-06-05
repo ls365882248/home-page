@@ -31,3 +31,15 @@ body, html {
   font-size: 25px;
   letter-spacing: 10px;
 }
+
+.spider {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  left: 200px;
+  /* text-align: center; */
+}
+
+.spider > img {
+  width: 300px;
+}

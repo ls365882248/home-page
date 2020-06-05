@@ -1,12 +1,12 @@
 FROM node:alpine as builder
 ADD . /var/app
 WORKDIR /var/app
-ENV PATH="/var/app/node_modules/.bin/:${PATH}"
-ENV TZ Asia/Shanghai
 RUN npm install
-RUN npm run build
+COPY package.json /var/app/package.json
+# RUN npm run build
 # CMD serve -s build
-CMD npm start
-# COPY /build /usr/share/nginx/html
-ADD nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 3000
+RUN npm run build
+ENV PORT=3006
+EXPOSE 3006
+
+CMD [ "node", "server.js" ]

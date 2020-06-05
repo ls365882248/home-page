@@ -10,7 +10,9 @@ module.exports = {
   mode: "development",
   // 入口
   entry: {
-    app: "./src/index"
+    app: "./src/index",
+    javascript: "./src/index",
+    html: './index.html'
   },
   // 出口
   output: {
