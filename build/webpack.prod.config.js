@@ -31,6 +31,7 @@ module.exports = webpackMerge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: utils.resolve('./../dist/index.html'), // html模板的生成路径
       template: 'index.html',//html模板
+      chunks: ['app', 'spider'],
       inject: true, // true：默认值，script标签位于html文件的 body 底部
       hash: true, // 在打包的资源插入html会加上hash
       //  html 文件进行压缩

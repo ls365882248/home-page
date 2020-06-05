@@ -8,16 +8,16 @@ function resolve(dir) {
 module.exports = {
   // 指定构建环境  
   mode: "development",
+  devtool: 'eval', // 更快但是没有源码，无法 debug
   // 入口
   entry: {
     app: "./src/index",
-    javascript: "./src/index",
-    html: './index.html'
+    spider: "./src/spider"
   },
   // 出口
   output: {
     path: resolve("../dist"),
-    filename: "js/[name].[hash].js",
+    filename: "js/[name].js",
     publicPath: "/" // 打包后的资源的访问路径前缀
   },
   // 模块

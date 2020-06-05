@@ -3,6 +3,10 @@ body, html {
   margin: 0;
 }
 
+.unselect {
+  user-select: none;
+}
+
 .bg-img {
   /* The image used */
   background-image: url("./resource/full-img.jpg");
@@ -14,32 +18,123 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  color: #000
-}
-.caption .border {
-  background-color: #111;
+/* header */
+
+.home-top {
+  display: flex;
+  height: 36px;
   color: #fff;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
 }
+.left {
+  flex: 1;
+}
+.right {
+  padding-right: 20px;
+}
+.menu-icon {
+  padding: 10px;
+  cursor: pointer;
+}
+.menu-icon>div {
+  width: 20px;
+  height: 3px;
+  background-color: #C2C2C2;
+  margin: 4px 0;
+}
+
+/* content */
+
+.home-content {
+  position: relative;
+  flex: 1;
+}
+
+.person-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 200%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* footer */
+
+.home-bottom {
+  height: 36px;
+  color: #fff;
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* spider */
 
 .spider {
   position: absolute;
-  width: 100%;
+  width: 300px;
   z-index: 1000;
   left: 200px;
-  /* text-align: center; */
+  top: 0;
+  transition: top 1s linear;
 }
 
 .spider > img {
   width: 300px;
+}
+
+/* overlay */
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  right: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+.overlay .closebtn {
+  position: absolute;
+  right: 15px;
+  font-size: 24px;
 }
