@@ -116,16 +116,29 @@ body, html {
 /* Position the content inside the overlay */
 .overlay-content {
   position: relative;
-  top: 25%; /* 25% from the top */
+  top: 50px;
   width: 100%; /* 100% width */
   text-align: center; /* Centered text/links */
 }
 
+.overlay-content .content {
+  display: flex;
+  padding-left: 30px;
+}
+
+.overlay-content .content .img {
+  width: 30px;
+  cursor: pointer;
+  padding-right: 15px;
+}
+.overlay-content .content img {
+  width: 100%;
+}
+
 /* The navigation links inside the overlay */
 .overlay a {
-  padding: 8px;
+  padding: 4px;
   text-decoration: none;
-  font-size: 36px;
   color: #818181;
   display: block; /* Display block instead of inline */
   transition: 0.3s; /* Transition effects on hover (color) */
