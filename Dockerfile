@@ -6,7 +6,7 @@ COPY package.json /var/app/package.json
 # RUN npm run build
 # CMD serve -s build
 RUN npm run build
-COPY ./dist /usr/share/nginx/html
+COPY dist /usr/share/nginx/html
 ENV PORT=3006
 EXPOSE 3006
 
