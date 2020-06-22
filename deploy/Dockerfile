@@ -6,7 +6,9 @@ COPY package.json /var/app/package.json
 # RUN npm run build
 # CMD serve -s build
 RUN npm run build
-ENV PORT=3006
-EXPOSE 3006
+COPY --from=builder app/dist/ /web/dist/
+ADD build/nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
 
 CMD [ "node", "server.js" ]
