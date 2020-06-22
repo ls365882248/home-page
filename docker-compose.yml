@@ -3,5 +3,5 @@ services:
   home:
     ports:
       - "3006:80"
-    build: ./deploy
+    build: .
     restart: always

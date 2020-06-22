@@ -6,8 +6,8 @@ COPY package.json /var/app/package.json
 # RUN npm run build
 # CMD serve -s build
 RUN npm run build
-COPY --from=builder app/dist/ /web/dist/
-ADD build/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder var/app/dist/ /web/dist/
+ADD nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
