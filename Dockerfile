@@ -7,7 +7,7 @@ RUN npm run build
 
 FROM nginx:alpine 
 # COPY --from=builder var/app/dist/ /web/dist/
-ADD app/dist/ /usr/share/nginx/html
+COPY --from=builder app/dist/ /usr/share/nginx/html
 RUN echo $PWD
 ADD nginx.conf /etc/nginx/conf.d/default.conf
 
