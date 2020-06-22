@@ -1,13 +1,13 @@
 FROM node:alpine as builder
-ADD . /var/app
-WORKDIR /var/app
+ADD . /app
+WORKDIR /app
 RUN npm install
-COPY package.json /var/app/package.json
+COPY package.json /app/package.json
 RUN npm run build
 
 FROM nginx:alpine 
 # COPY --from=builder var/app/dist/ /web/dist/
-COPY --from=builder var/app/dist/ /usr/share/nginx
+COPY app/dist/ /usr/share/nginx/html
 ADD nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
