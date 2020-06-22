@@ -7,7 +7,7 @@ RUN npm run build
 
 FROM nginx:alpine 
 COPY --from=builder var/app/dist/ /web/dist/
-ADD nginx.conf /etc/nginx/conf.d/default.conf
+ADD nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 
