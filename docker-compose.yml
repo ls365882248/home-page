@@ -2,6 +2,6 @@ version: "3"
 services:
   home:
     ports:
-      - "3006:80"
+      - "3006:81"
     build: .
     restart: always
