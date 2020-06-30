@@ -10,8 +10,8 @@ FROM nginx:alpine
 COPY --from=builder app/dist/ /usr/share/nginx/html
 RUN echo $PWD
 
-ADD nginx.conf /etc/nginx/conf.d/default.conf
-RUN cat /etc/nginx/conf.d/default.conf
+# ADD nginx.conf /etc/nginx/conf.d/default.conf
+# RUN cat /etc/nginx/conf.d/default.conf
 
 EXPOSE 3006
 
